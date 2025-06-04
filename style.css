@@ -11,22 +11,17 @@ html {
   font-style: normal;
 }
 
-ul {
+ul.topnav {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
-  position: fixed;
-  top: 0;
-  width: 100%;
 }
 
-li {
-  float: left;
-}
+ul.topnav li {float: left;}
 
-li a {
+ul.topnav li a {
   display: block;
   color: white;
   text-align: center;
@@ -34,12 +29,15 @@ li a {
   text-decoration: none;
 }
 
-li a:hover:not(.active) {
-  background-color: #111;
-}
+ul.topnav li a:hover:not(.active) {background-color: #111;}
 
-.active {
-  background-color: #04AA6D;
+ul.topnav li a.active {background-color: #04AA6D;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
 }
 
 .logo {
