@@ -10,12 +10,14 @@ html {
   font-style: normal;
 }
 
-header {
+.webtop {
   background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 72px;
 }
 
 .logo {
-  margin: 5px;
+  margin: 4px;
 }
 
 h1 {
