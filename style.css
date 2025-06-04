@@ -4,12 +4,12 @@ html {
 }
 
 @font-face {
-    font-family: 'atarian';
-    src: url('/atari-heaven/src/title.ttf') format('truetype');
+    font-family: 'sf_atarian_system';
+    src: url('/atari-heaven/src/sf_atarian_system.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 h1 {
-  font-family: 'atarian';
+  font-family: 'sf_atarian_system';
 }
