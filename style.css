@@ -11,7 +11,7 @@ body {
   font-style: normal;
 }
 
-ul.topnav {
+.topnav {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -19,9 +19,7 @@ ul.topnav {
   background-color: #333;
 }
 
-ul.topnav li {float: left;}
-
-ul.topnav li a {
+.topnav a {
   display: block;
   color: white;
   text-align: center;
@@ -29,15 +27,23 @@ ul.topnav li a {
   text-decoration: none;
 }
 
-ul.topnav li a:hover:not(.active) {background-color: #111;}
+.topnav a:hover {
+  background-color: #111;
+}
 
-ul.topnav li a.active {background-color: #04AA6D;}
+.topnav a.active {
+  background-color: #04AA6D;
+}
 
-ul.topnav li.right {float: right;}
+.topnav .right {
+  float: right;
+}
 
 @media screen and (max-width: 600px) {
-  ul.topnav li.right, 
-  ul.topnav li {float: none;}
+  .topnav .right, 
+  .topnav a {
+    float: none;
+  }
 }
 
 .home {
