@@ -14,7 +14,8 @@ html {
 .webtop {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  overflow: hidden;
+  position: fixed;
+  overflow: auto;
 }
 
 .logo {
