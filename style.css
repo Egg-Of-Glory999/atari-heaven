@@ -13,6 +13,10 @@ body {
   font-style: normal;
 }
 
+nav {
+  max-height: 36px;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -68,7 +72,7 @@ li.dropdown {
 }
 
 .logo {
-  padding: 4px 4px;
+  padding: 2px 2px;
 }
 
 .title {
