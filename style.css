@@ -17,6 +17,7 @@ body {
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  display: table;
 }
 
 .topnav a {
