@@ -4,7 +4,7 @@ html {
 }
 
 @font-face {
-    font-family: 'sf_atarian_systemregular';
+    font-family: 'atarian';
     src: url('/atari-heaven/src/title.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
