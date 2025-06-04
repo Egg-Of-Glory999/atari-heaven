@@ -45,6 +45,11 @@ ul.topnav li.right {float: right;}
   padding: auto;
 }
 
+.homeImg {
+  vertical-align: center;
+  display: inline-block;
+}
+
 .homeText {
   vertical-align: center;
   margin: 16px 12px;
