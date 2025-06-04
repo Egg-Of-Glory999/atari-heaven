@@ -58,7 +58,7 @@ body {
 }
 
 .homeText {
-  vertical-align: center;
+  display: inline-block;
   margin: 16px 12px;
 }
 
