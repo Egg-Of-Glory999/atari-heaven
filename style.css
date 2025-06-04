@@ -67,6 +67,10 @@ li.dropdown {
   display: block;
 }
 
+.logo {
+  padding: 4px;
+}
+
 .title {
   font-family: 'sf_atarian_system';
   font-size: 64px;
