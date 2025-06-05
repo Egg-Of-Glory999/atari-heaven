@@ -1,0 +1,73 @@
+{
+    "folders": [],
+    "files": [
+      {
+        name: "Asteroids",
+        path: "asteroids.a78"
+      },
+      {
+        name: "Ballblazer",
+        path: "ballblazer.a78"
+      },
+      {
+        name: "Bentley Bear's Crystal Quest",
+        path: "bentleybear.a78"
+      },
+      {
+        name: "Choplifter",
+        path: "choplifter.a78"
+      },
+      {
+        name: "Commando",
+        path: "commando.a78"
+      },
+      {
+        name: "Donkey Kong",
+        path: "donkeykong.a78"
+      },
+      {
+        name: "Donkey Kong Jr.",
+        path: "donkeykongjr.a78"
+      },
+      {
+        name: "Double Dragon",
+        path: "doubledragon.a78"
+      },
+      {
+        name: "Food Fight",
+        path: "foodfight.a78"
+      },
+      {
+        name: "Impossible Mission",
+        path: "impossiblemission.a78"
+      },
+      {
+        name: "Mario Bros. Classic",
+        path: "mariobros.a78"
+      },
+      {
+        name: "Ninja Golf",
+        path: "ninjagolf.a78"
+      },
+      {
+        name: "Pac-Man Collection",
+        path: "pacman.a78"
+      },
+      {
+        name: "Pole Position II",
+        path: "poleposition2.a78"
+      },
+      {
+        name: "Scrapyard Dog",
+        path: "scrapyarddog.a78"
+      },
+      {
+        name: "WWE Title Match",
+        path: "wwe.a78"
+      },
+      {
+        name: "Xevious",
+        path: "xevious.a78"
+      }
+    ]
+}
