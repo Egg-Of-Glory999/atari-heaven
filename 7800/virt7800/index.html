@@ -5,12 +5,12 @@
             Atari Heaven
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/atari-heaven/style.css">
-        <link rel="stylesheet" href="/atari-heaven/src/7800/css/js7800.css">
-        <link rel="icon" type="image/x-icon" href="/atari-heaven/favicon.ico">
-        <script src="/atari-heaven/src/7800/js/js7800.min.js"></script>
-        <script src="/atari-heaven/src/7800/js/site.min.js"></script>
-        <script src="/atari-heaven/src/7800/js/bupboop.js"></script>
+        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/src/7800/css/js7800.css">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <script src="/src/7800/js/js7800.min.js"></script>
+        <script src="/src/7800/js/site.min.js"></script>
+        <script src="/src/7800/js/bupboop.js"></script>
     </head>
     <body>
         <nav>
@@ -42,13 +42,6 @@
         </li>
       </ul>
     </nav>
-        <div class="header">
-            <span class="header__label">JS7800 by raz0red</span>
-    
-            <a href="https://github.com/raz0red/js7800" target="_blank"><img
-            class="header__logo" src="/atari-heaven/src/7800/images/github-logo.svg" alt="GitHub: JS7800 by raz0red"
-            title="GitHub: JS7800 by raz0red"></a>
-      </div>
       <div id="content">
         <div class="drop__div"></div>
         <div id="js7800__target"></div>
@@ -61,7 +54,13 @@
           <div id="select-remote-file"></div>
         </div>
       </div>
-
+      <div class="header" vertical-align="bottom">
+            <span class="header__label">JS7800 by raz0red</span>
+    
+            <a href="https://github.com/raz0red/js7800" target="_blank"><img
+            class="header__logo" src="/atari-heaven/src/7800/images/github-logo.svg" alt="GitHub: JS7800 by raz0red"
+            title="GitHub: JS7800 by raz0red"></a>
+      </div>
       <script>
         console.log(window.Module)
         site.init(js7800);
