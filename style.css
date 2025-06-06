@@ -87,6 +87,6 @@ li.dropdown {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
-  align: center;
+  text-align: center;
 }
 
