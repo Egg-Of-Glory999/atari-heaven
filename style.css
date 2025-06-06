@@ -15,10 +15,10 @@ body {
 
 nav {
   max-height: 36px;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  position: fixed;
 }
 
 ul {
