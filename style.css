@@ -8,7 +8,7 @@ body {
 
 @font-face {
   font-family: 'sf_atarian_system';
-  src: url('/atari-heaven/src/sf_atarian_system.ttf') format('truetype');
+  src: url('/src/sf_atarian_system.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
