@@ -16,6 +16,8 @@ body {
 nav {
   max-height: 36px;
   top: 0;
+  right: 0;
+  left: 0;
   position: fixed;
 }
 
