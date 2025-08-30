@@ -11,6 +11,9 @@ body {
   src: url('/src/sf_atarian_system.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+p {
   background-image: rgb(0,0,0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
