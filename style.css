@@ -14,8 +14,8 @@ body {
 }
 
 p {
-  outline: 3px solid white;
   color: black;
+  -webkit-text-stroke: 3px white;
 }
 
 nav {
