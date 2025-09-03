@@ -14,11 +14,8 @@ body {
 }
 
 p {
-  background-image: rgb(0,0,0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1.5px;
-  -webkit-text-stroke-color: white;
+  outline: 3px solid white;
+  color: black;
 }
 
 nav {
