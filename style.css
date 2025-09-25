@@ -3,6 +3,7 @@ body {
   font-family: 'sf_atarian_system';
   font-size: 14px;
   background-color: #1E1E1E;
+  color: #ffffff;
 }
 
 @font-face {
@@ -10,10 +11,6 @@ body {
   src: url('/src/sf_atarian_system.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-}
-
-p {
-  color: #ffffff;
 }
 
 nav {
