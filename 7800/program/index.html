@@ -56,44 +56,70 @@
       <br />Changes over the original 6502: 
         <ul>
           <li>HALT signal on pin 35</li>
+          <br />
           <li>R/W signal on pin 36</li>
+          <br />
           <li>Stock 6502 has these, but aren't connected to any pins</li>
         </ul>
-      <li>GPU: Custom MARIA Graphics Chip</li>
+      <br /><li>GPU: Custom MARIA Graphics Chip</li>
       <br />Hardware Information:
         <ul>
+          <br />
           <li>Total Resolution: 454x263@60Hz (NTSC), 454x313@50Hz (PAL)</li>
+          <br />
           <li>Theoretical Visible Resolution: 320x243 (NTSC), 320x293 (PAL)</li>
+          <br />
           <li>Practical Visible Resolution: 320x192 to 224 (NTSC), 320x240 to 288 (PAL)</li>
+          <br />
           <li>Clock Speed: 7.16 MHz</li>
+          <br />
           <li>Memory: Shared with the CPU</li>
+          <br />
           <li>Video Modes:
+            <br />
             <li>Read Mode 0:
+              <br />
               <li>Write Mode 0 - 160-pixel, 2bpp (160A)</li>
+              <br />
               <li>Write Mode 1 - 160-pixel, 4bpp (160B)</li>
+              <br />
             </li>
+            <br />
             <li>Read Mode 1: N/A</li>
+            <br />
             <li>Read Mode 2:
+              <br />
               <li>Write Mode 0 - 320-pixel, faux 2bpp (320D)</li>
+              <br />
               <li>Write Mode 1 - 320-pixel, 2bpp (320B)</li>
+              <br />
             </li>
+            <br />
             <li>Read Mode 3:
+              <br />
               <li>Write Mode 0 - 320-pixel, 1bpp (320A)</li>
+              <br />
               <li>Write Mode 1 - 320-pixel, faux 2bpp (320C)</li>
+              <br />
             </li>
           </li>
+          <br />
           <li>
             DMA Modes:
+            <br />
             <li>
               DMA Modes 0 and 1 - DO NOT USE, THESE DMA MODES CAN BREAK YOUR CONSOLE!!!
             </li>
+            <br />
             <li>
               DMA Mode 2 - Normal DMA
             </li>
+            <br />
             <li>
               DMA Mode 3 - No DMA
             </li>
           </li>
+          <br />
           <li>
             Halts CPU whenever it draws graphics due to DMA, except for DMA Mode 3.
           </li>
