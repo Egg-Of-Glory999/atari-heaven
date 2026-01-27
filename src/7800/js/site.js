@@ -10,7 +10,7 @@ import * as HighScore from "./highscore.js"
 import { SettingsDialog } from "./settings-dialog.js"
 import { HelpDialog } from "./help-dialog.js"
 
-import css from '../css/site.css'
+import css from '/style.css'
 import messageCss from '../css/common/message-common.css'
 
 var showMessage = Message.showMessage;
@@ -281,3 +281,4 @@ function init(in7800) {
 }
 
 export { init }
+
