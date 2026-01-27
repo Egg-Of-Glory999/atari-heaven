@@ -124,9 +124,9 @@ var SALLY_CYCLES = [
   2, 5, 0, 0, 0, 4, 6, 0, 2, 4, 0, 0, 0, 4, 7, 0, // 112 - 127
   2, 6, 0, 0, 3, 3, 3, 0, 2, 0, 2, 0, 4, 4, 4, 0, // 128 - 143
   2, 6, 0, 0, 4, 4, 4, 4 /* SAX */, 2, 5, 2, 0, 0, 5, 0, 0, // 144 - 159
-  2, 6, 2, 0, 3, 3, 3, 0, 2, 2, 2, 0, 4, 4, 4, 0, // 160 - 175
+  2, 6, 2, 0, 3, 3, 3, 0, 2, 2, 2, 0, 4, 4, 4, 4 /* LAX abs */, // 160 - 175
   2, 5, 0, 6 /* LAX */, 4, 4, 4, 0, 2, 4, 2, 0, 4, 4, 4, 0, // 176 - 191
-  2, 6, 0, 0, 3, 3, 5, 0, 2, 2, 2, 0, 4, 4, 6, 0, // 192 - 207
+  2, 6, 0, 0, 3, 3, 5, 0, 2, 2, 2, 2 /* SBX */, 4, 4, 6, 0, // 192 - 207
   2, 5, 0, 0, 0, 4, 6, 0, 2, 4, 0, 0, 0, 4, 7, 0, // 208 - 223
   2, 6, 0, 0, 3, 3, 5, 0, 2, 2, 2, 0, 4, 4, 6, 0, // 222 - 239
   2, 5, 0, 0, 0, 4, 6, 0, 2, 4, 0, 0, 0, 4, 7, 0, // 240 - 255
@@ -1039,21 +1039,22 @@ function sally_SBC() {
     var ztemp = new Pair();
     ztemp.setW(sally_a - data - !(sally_p & SALLY_FLAG.C));
 
+    // BCD Fix?: Proper alignment w/ A7800 and hardware based on KGCD issue.
     //word al = (sally_a & 15) - (data & 15) - !(sally_p & SALLY_FLAG.C);
-    var al = ((sally_a & 15) - (data & 15) - !(sally_p & SALLY_FLAG.C)) & 0xFFFF;
+    var al = ((sally_a & 15) - (data & 15) - !(sally_p & SALLY_FLAG.C)) /*& 0xFFFF*/;
     //word ah = (sally_a >> 4) - (data >> 4);
-    var ah = ((sally_a >>> 4) - (data >>> 4)) & 0xFFFF;
+    var ah = ((sally_a >>> 4) - (data >>> 4)) /*& 0xFFFF*/;
 
-    if (al > 9) {
+    if (al < 0) {
       //al -= 6;
-      al = (al - 6) & 0xFFFF;
+      al = (al - 6) /*& 0xFFFF*/;
       //ah--;
-      ah = (ah - 1) & 0xFFFF;
+      ah = (ah - 1) /*& 0xFFFF*/;
     }
 
-    if (ah > 9) {
+    if (ah < 0) {
       //ah -= 6;
-      ah = (ah - 6) & 0xFFFF;
+      ah = (ah - 6) /*& 0xFFFF*/;
     }
 
     //pair temp;
@@ -1124,6 +1125,31 @@ function sally_SBC() {
     //sally_a = temp.b.l;
     sally_a = temp.getBL();
   }
+}
+
+// ----------------------------------------------------------------------------
+// SBX (AXS)
+// ----------------------------------------------------------------------------
+function sally_SBX() {
+  // Read immediate operand
+  var data = memory_Read(sally_pc.wPlusPlus());
+
+  // Calculate (A & X)
+  var temp = sally_a & sally_x;
+
+  // Subtract imm and store in X
+  var result = (temp - data) & 0xFF;
+  sally_x = result;
+
+  // Set Carry if (A & X) >= imm
+  if (temp >= data) {
+    sally_p |= SALLY_FLAG.C;
+  } else {
+    sally_p = (sally_p & ~SALLY_FLAG.C) & 0xFF;
+  }
+
+  // Set Zero and Negative flags
+  sally_Flags(result);
 }
 
 // ----------------------------------------------------------------------------
@@ -1329,6 +1355,10 @@ function sally_ExecuteInstruction() {
   }
 
   switch (sally_opcode) {
+    case 0xCB:
+      /* SBX illegal opcode, via reveng */
+      sally_SBX();
+      return sally_cycles;
     //l_0x00:
     case 0x00:
       sally_BRK();
@@ -2147,6 +2177,11 @@ function sally_ExecuteInstruction() {
     case 0x80:
       // Double no-op
       return sally_cycles;
+    case 0xaf: // LAX abs
+      sally_Absolute();
+      sally_LDA();
+      sally_TAX();
+      return sally_cycles;
     case 0xfc:
     case 0xfb:
     case 0xfa:
@@ -2177,7 +2212,6 @@ function sally_ExecuteInstruction() {
     case 0xb7:
     /*case 0xb3:*/
     case 0xb2:
-    case 0xaf:
     case 0xab:
     case 0xa7:
     case 0xa3:
