@@ -30,10 +30,6 @@
         "path": "donkeykongjr.a78"
       },
       {
-        "name": "Double Dragon",
-        "path": "doubledragon.a78"
-      },
-      {
         "name": "Food Fight",
         "path": "foodfight.a78"
       },
@@ -44,6 +40,10 @@
       {
         "name": "Mario Bros. Classic",
         "path": "mariobros.a78"
+      },
+      {
+        "name": "Midnight Mutants",
+        "path": "midnightmutants.a78"
       },
       {
         "name": "Ninja Golf",
